@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sum Calculator</h1>
+
+<form id="sumForm">
+    <label>Enter up to 10 numbers:</label><br>
+    <input type="number" class="numberInput" placeholder="Number 1"><br>
+    <input type="number" class="numberInput" placeholder="Number 2"><br>
+    <input type="number" class="numberInput" placeholder="Number 3"><br>
+    <input type="number" class="numberInput" placeholder="Number 4"><br>
+    <input type="number" class="numberInput" placeholder="Number 5"><br>
+    <input type="number" class="numberInput" placeholder="Number 6"><br>
+    <input type="number" class="numberInput" placeholder="Number 7"><br>
+    <input type="number" class="numberInput" placeholder="Number 8"><br>
+    <input type="number" class="numberInput" placeholder="Number 9"><br>
+    <input type="number" class="numberInput" placeholder="Number 10"><br>
+    <button type="button" onclick="calculateSum()">Calculate Sum</button>
+</form>
+
+<div class="result" id="result"></div>
+
+<script>
+    function calculateSum() {
+        const inputs = document.querySelectorAll('.numberInput');
+        let sum = 0;
+        inputs.forEach(input => {
+            const value = parseFloat(input.value);
+            if (!isNaN(value)) {
+                sum += value;
+            }
+        });
+        document.getElementById('result').textContent = 'Sum: ' + sum;
+    }
+</script>
+
+</body>
+</html>
