@@ -1,1 +1,2 @@
 This AI ML model predicts the future growth of volume based on the historical data.
+MOdel used is called ARIMA which works on the moving average.
